@@ -4,8 +4,6 @@ function Footer() {
       <div className="container footer-grid">
         <div>
           <div className="brand footer-brand">
-            <div className="brand-mark">P</div>
-            <span>PawGo</span>
           </div>
           <p>
             Helping pets find loving homes and families discover the joy of responsible care.

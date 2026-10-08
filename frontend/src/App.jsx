@@ -1,15 +1,17 @@
-
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
+
 function App() {
+  const location = useLocation();
+
+  const hideNavbar = location.pathname === "/login";
+
   return (
     <>
-      <Navbar/>
+      {!hideNavbar && <Navbar />}
       <Outlet />
     </>
   );
 }
 
 export default App;
-
