@@ -18,8 +18,9 @@ const petAdoptionData = new mongoose.Schema({
     vaccinationStatus: {
         type: Boolean,
         default: false
-    }
-
+    },
+}, {
+    timestamps: true
 })
 const petAdoptionModel = mongoose.model('pets', petAdoptionData)
 export default petAdoptionModel

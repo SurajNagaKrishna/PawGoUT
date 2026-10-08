@@ -3,6 +3,8 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import connectDB from './config/db.js';
 import homeRoutes from './routes/homeRoutes.js';
+import session from 'express-session';
+import loginRouter from './routes/loginRouter.js';
 
 dotenv.config();
 
@@ -13,6 +15,19 @@ app.use(cors({
   origin: process.env.CLIENT_URL || 'http://localhost:5173',
   credentials: true
 }));
+app.use(
+  session({
+    secret: process.env.SECRET_KEY,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      httpOnly: true,
+      secure: true,
+      sameSite: 'strict',
+      maxAge: 24 * 60 * 60 * 1000
+    }
+  })
+)
 
 app.use(express.json());
 
@@ -24,6 +39,7 @@ app.get('/api/health', (req, res) => {
 });
 
 app.use('/api/home', homeRoutes);
+app.use('/api/login', loginRouter);
 
 const startServer = async () => {
   try {

@@ -11,6 +11,7 @@ import Adoption from "./pages/Adoption";
 import "./index.css";
 import Home from "./pages/Home";
 import Assistant from "./pages/Assistant";
+import Auth from "./pages/Auth";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
         element: <Adoption />,
       },
       {
-       path:"login",
+        path: "login",
         element: <Auth />,
       },
       {
