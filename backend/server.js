@@ -5,6 +5,7 @@ import connectDB from './config/db.js';
 import homeRoutes from './routes/homeRoutes.js';
 import session from 'express-session';
 import loginRouter from './routes/loginRouter.js';
+import registerRoutes from './routes/registerRoutes.js';
 
 dotenv.config();
 
@@ -40,6 +41,7 @@ app.get('/api/health', (req, res) => {
 
 app.use('/api/home', homeRoutes);
 app.use('/api/login', loginRouter);
+app.use('/api/register', registerRoutes);
 
 const startServer = async () => {
   try {

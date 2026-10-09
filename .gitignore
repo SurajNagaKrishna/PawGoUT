@@ -18,13 +18,15 @@ build/
 
 # Environment files
 .env
-.env*
-!.env.example
+.env.*
 *.env
 backend/.env
-backend/.env*
+backend/.env.*
 frontend/.env
-frontend/.env*
+frontend/.env.*
+!.env.example
+!*/.env.example
+!**/.env.example
 
 # Local env files
 *.local

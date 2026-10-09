@@ -1,5 +1,4 @@
-import connectDB from "../config/db";
-import mongoose from 'mongoose'
+import mongoose from 'mongoose';
 const registrationSchema = new mongoose.Schema({
     fname: {
         type: String,
