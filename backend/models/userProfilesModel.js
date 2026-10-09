@@ -13,10 +13,6 @@ const userSchema = new mongoose.Schema({
         enum: ['male', 'female', 'other'],
         required: true
     },
-    dob: {
-        type: Date,
-        required: true
-    },
     location: {
         type: String,
         required: true
@@ -29,7 +25,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    timestamps: true
+
 
 
 
